@@ -4,6 +4,16 @@ Returns: an integer
 '''
 def single_number(arr):
     # Your code here
+    arr.sort()
+    #check first element:
+    if arr[0] != arr[1]:
+        return arr[0]
+    # check final element:
+    if arr[len(arr)-1] != arr[len(arr)-2]:
+        return arr[len(arr)-1]
+    for i in range(1, len(arr)-2):
+        if arr[i-1] < arr[i] and arr[i+1] > arr[i]:
+            return arr[i]
 
     pass
 
